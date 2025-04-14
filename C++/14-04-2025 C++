@@ -1,2 +1,26 @@
 // C++ learnings and notes
+/*
+- A computer program is a sequence of instructions that directs a computer to perform certain actions in a specified order.
+- Computer programs are typically written in a programming language, which is a language designed to facilitate the writing 
+  of instructions for computers.
+- When a computer is performing the actions described by the instructions in a computer program, we say it is running or 
+  executing the program.
+- A computer will not begin execution of a program until told to do so. 
+- That typically requires the user to launch (or run or execute) the program, although programs may also be launched by 
+  other programs.
+- Programs are executed on the computer’s hardware, which consists of the physical components that make up a computer.
+  Hardware found on a typical computing device includes:
+    - A CPU (central processing unit, called the “brain” of the computer), which actually executes the instructions.
+    - Memory, where computer programs are loaded prior to execution.
+    - Interactive devices (e.g. a monitor, touch screen, keyboard, or mouse), which allow a person to interact with a computer.
+    - Storage devices (e.g. a hard drive, SSD, or flash memory), which retain information (including installed programs) 
+      even when the computer is turned off.
+- Software refers to the programs on a system that are designed to be executed on hardware.
+- A compatible set of hardware and software (OS, browser, etc…) that provides an environment for software to run. 
+- A computer’s CPU is incapable of understanding C++. Instead, CPUs are only capable of processing instructions written in 
+  machine language (or machine code). The set of all possible machine language instructions that a given CPU can understand 
+  is called an instruction set.
+- An assembly language (often called assembly for short) is a programming language that essentially functions as a more 
+  human-readable machine language.
+- 
 
