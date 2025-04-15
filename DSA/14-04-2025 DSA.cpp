@@ -55,7 +55,7 @@ public:
         int n = nums.size();
         for (int i = 0; i < n; i++) {
           for (int j = i+1; j < n; j++) {
-              if ((nums[i] + nums[j]) == target && i !=j) {
+              if ((nums[i] + nums[j]) == target && i !=j) { // unecessary condition
                 return {i,j};
               }  
             }
@@ -66,7 +66,7 @@ public:
 /*
 Complexity analysis:
   - 1st for loop runs O(n) times as there are n elements in the array from i = 0  to i = n-1
-  - 2nd for loop runs O(n-1) times as for this one there will always be 1 element less to check from j = i+1 to j = n-1.
+  - 2nd for loop runs O(n) times as for this one there will always be 1 element less to check from j = i+1 to j = n-1.
 */
 // Total Time Complexity : O(n) * O (n-1) ~ O(n^2)
 // Space Complexity : no extra space is used, just travelsal : O(1)
