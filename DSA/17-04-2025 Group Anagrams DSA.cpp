@@ -24,3 +24,34 @@ Constraints:
 0 <= strs[i].length <= 100
 strs[i] is made up of lowercase English letters.
 */
+
+/*
+Approach -
+  Given : - an array of strings strs
+  Task :  - to group annagrams together into sublists
+*/
+
+/*
+Solution 1 - we can treverse through each word and store it in a hashmap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
