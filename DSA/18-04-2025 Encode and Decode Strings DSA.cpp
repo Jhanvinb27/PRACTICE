@@ -38,4 +38,44 @@ int main() {
     return 0;
 }
 
-  
+// for decoding
+vector<string> decode(string s){
+      vector<string> output;
+      for(int i=0; i < n; i++){
+            output.push_back(map[i]);
+      }
+      return output;
+}
+
+// NeetCode solution
+public:
+    unordered_map<int, string> map;
+    string encode(vector<string>& strs) {
+        string result;
+        for(int i = 0; i < strs.size(); i++){
+            map[i] = strs[i];
+        }
+        for (int i=0; i < map.size(); i++ ){
+            result += to_string(map[i].size());
+        }
+        return result;
+    }
+
+    vector<string> decode(string s) {
+        vector<string> output;
+        for (int i = 0; i < map.size(); i++) {
+            output.push_back(map[i]);
+        }
+    return output;
+    }
+};
+
+// Time Complexity : O(n) 
+// Space Complexity : O(n)
+
+/* 
+Recommended Time & Space Complexity - Aim for a solution with O(m) time 
+                                             - for each encode() and decode() call and 
+                                    - O(m+n) space, 
+                                             - where m is the sum of lengths of all the strings and n is the number of strings.
+*/
