@@ -79,3 +79,28 @@ Recommended Time & Space Complexity - Aim for a solution with O(m) time
                                     - O(m+n) space, 
                                              - where m is the sum of lengths of all the strings and n is the number of strings.
 */
+
+class Solution {
+public:
+    string encode(vector<string>& strs) {
+        string result;
+        for (string& s : strs) {
+            result += to_string(s.size()) + '#' + s;
+        }
+        return result;
+    }
+
+    vector<string> decode(string s) {
+        vector<string> result;
+        int i = 0;
+        while (i < s.size()) {
+            int j = i;
+            while (s[j] != '#') j++;
+            int len = stoi(s.substr(i, j - i));
+            result.push_back(s.substr(j + 1, len));
+            i = j + 1 + len;
+        }
+        return result;
+    }
+};
+
