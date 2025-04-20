@@ -101,23 +101,51 @@ vector<int> productExceptSelf(vector<int>& nums) {
 
 // first we will store product of all elements to the left of i
 // then we will multiply by product of all elements to the right of i
+/*
+Example : [2, 4, 5, 0, 4, 3] -> total 6 elements
+        - for each element starting from index 0 -> 2
+        - left of 2 is 1 : = 1
+        - left of index 1 i.e element 4 is 2 : left product = 2*1 = 2
+        - left of index 2 i.e left of 5 -> 4*2*1 = 8
+        - left of index 3 i.e left of 0 -> 5*4*2*1 = 40
+        - left of index 4 i.e left of 4 -> 0*5*4*2*1 = 0
+        - left of index 5 i.e left of 3 -> 0
+
+        - then we compute right pproduct starting from index 0
+        - right of index 0 i.e right of 2 -> 4*5*0*4*3 = 0
+        - right of index 1 i.e right of 4 -> 0
+        - right of index 2 i.e right of 5 -> 0
+        - right of index 3 i.e right of 0 -> 4*3 = 12
+        - right of index 4 i.e right of 4 -> 3*1 = 3
+        - right of index 5 i.e right of 3 -> 1
+
+        - the comes final answer = left product * right product 
+        - index 0 = 1*0 = 0
+        - index 1 = 2*0 = 0
+        - index 2 = 8*0 = 0
+        - index 3 = 40*12 = 480
+        - index 4 = 0*3 = 0
+        - index 5 = 0*1 = 0
+
+        - Final ans : [0, 0, 0, 480, 0, 0]
+*/
 vector<int> productExceptSelf(vector<int>& nums) {
     int n = nums.size();
     vector<int> output(n);
   
     output[0] = 1;
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) { // O(n)
         output[i] = output[i - 1] * nums[i - 1];
     }
     
     int right = 1;
-    for (int i = n - 1; i >= 0; i--) {
+    for (int i = n - 1; i >= 0; i--) { // O(n)
         output[i] = output[i] * right;
         right = right * nums[i];
     }
     return output;
 }
 
-// Time Complexity : O(n)
+// Time Complexity : O(n + n) = O(n)
 // Space Complexity : O(1)
 
