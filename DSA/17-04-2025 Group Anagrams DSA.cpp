@@ -41,6 +41,10 @@ Solution 1 - we can sort each word
 */
 # include <bits/stdc++.h>
 using namespace std;
+// M - Not clear what is explained in solution portion. No complexity analysis.
+// '+' operator is used for string and int shich is incompatible type ig?
+// what is push_backstrs() exactly?
+// optimal approach seems to be correct.
   vector <vector<string>> GroupedAnagrams (vector<string>& strs){
     sort(strs.begin(), strs.end());
     vector <string> sublists;
