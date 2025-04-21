@@ -14,6 +14,9 @@ Solution 1 - we can use a hashmap to store <"string",index>
            - and then we can create an array to store the encoded result of the string into one array
            - and when we want to decode we can simply refer to the given hashmap and execute the decoding 
            - Let's Code it:
+// M - This approach is incorrect as no shared map object allowed among the two functions. and if allowed still we don't the variables like n which is used in the code for decoding 
+and map size also grows at higher rate.
+Last approach with adding special character while contacting the strings is correct.
 */
 
 // for encoding
