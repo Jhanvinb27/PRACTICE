@@ -37,6 +37,83 @@ Sulution 1 - wee'll store all the elements in a map or a set in ascending order
            - Let's code it
 */
 
-# include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
+int LongestConsecutiveSubsequence(vector<int> nums) {
+    unordered_set<int> s;
+    // insert all elements into the set
+    for (int num : nums) {
+        s.insert(num);
+    }
+    int longest = 0;
+    for (int num : nums) {
+        if (s.find(num - 1) == s.end()) { // if the number just before num is NOT in the set..
+            int currentNum = num;
+            int count = 1;
+
+            while (s.find(currentNum + 1) != s.end()) { // as long as the next number (currentNum + 1) exists in the set s, keep going
+                currentNum++;
+                count++;
+            }
+
+            longest = max(longest, count);
+        }
+    }
+
+    return longest;
+}
+
+int main() {
+    vector<int> nums = {2, 20, 4, 10, 3, 4, 5};
+    cout << LongestConsecutiveSubsequence(nums);
+    return 0;
+}
+
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+
+// sorting based taken O( n log n)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int LongestConsecutiveSubsequence(vector<int> nums) {
+    if (nums.empty()) return 0;
+
+    sort(nums.begin(), nums.end()); // Step 1: Sort the array
+
+    int longest = 1;
+    int count = 1;
+
+    for (int i = 1; i < nums.size(); i++) {
+        if (nums[i] == nums[i - 1]) {
+            continue; // Skip duplicates
+        }
+        else if (nums[i] == nums[i - 1] + 1) {
+            count++; // Part of a sequence
+        } else {
+            longest = max(longest, count); // Save max so far
+            count = 1; // Reset for new sequence
+        }
+    }
+
+    longest = max(longest, count); // Final check
+    return longest;
+}
+
+int main() {
+    vector<int> nums = {9, 56, 53, 8, 0, 4, 55, 78, 3, 54, 2, 0, 1, 57};
+    cout << LongestConsecutiveSubsequence(nums);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
 
