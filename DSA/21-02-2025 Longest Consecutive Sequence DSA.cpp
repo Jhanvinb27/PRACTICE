@@ -73,6 +73,52 @@ int main() {
 // Time Complexity : O(n)
 // Space Complexity : O(n)
 
+// but in leetcode above solution shows TLE because of no duplicates check
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        unordered_set<int> s(nums.begin(), nums.end());
+        int longest = 0;
+
+        for (int num : s) {  // loop over unique elements only
+            if (!s.count(num - 1)) {  // only start if it's the beginning of a sequence
+                int currentNum = num;
+                int count = 1;
+
+                while (s.count(currentNum + 1)) {
+                    currentNum++;
+                    count++;
+                }
+
+                longest = max(longest, count);
+            }
+        }
+
+        return longest;
+    }
+};
+
+// LC clean internet solution
+class Solution {
+ public:
+  int longestConsecutive(vector<int>& nums) {
+    int ans = 0;
+    unordered_set<int> seen{nums.begin(), nums.end()};
+
+    for (int num : nums) {
+      // `num` is the start of a sequence.
+      if (seen.contains(num - 1))
+        continue;
+      int length = 1;
+      while (seen.contains(++num))
+        ++length;
+      ans = max(ans, length);
+    }
+
+    return ans;
+  }
+};
+
 // sorting based taken O( n log n)
 
 #include <bits/stdc++.h>
