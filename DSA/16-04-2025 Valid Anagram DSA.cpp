@@ -24,6 +24,11 @@ Approach
 */
 class Solution {
 public:
+// M - This function is incorrect.
+// Observe if s and t are anagrams the number of occurrence of a single alphabet remain same.
+// Best approach will be maintain the frequency of alphabets for both string s and t.
+// And in the end match frequency tables.
+// Time complexity - O(max(n,m)), Space complexity - O(1) for storing frequency of 26 alphabets
     bool isAnagram(string s, string t) {
         int n = s.length();
         int m = t.length();
