@@ -52,3 +52,33 @@ public:
     }
 };
 
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+// Define the Solution class with the isAnagram method
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        unordered_map<char, int> countMap;
+
+        // Count characters in the first string
+        for (char c : s) {
+            countMap[c]++;
+        }
+
+        // Subtract character counts using the second string
+        for (char c : t) {
+            countMap[c]--;
+            if (countMap[c] < 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+};
