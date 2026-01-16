@@ -9,7 +9,7 @@ void Print(vector <int> array) {
   }
 }
 int main(){
-  int array = {2,3,4,5};
+  vector <int> array = {2,3,4,5};
   Print(array);
   return 0;
 }
