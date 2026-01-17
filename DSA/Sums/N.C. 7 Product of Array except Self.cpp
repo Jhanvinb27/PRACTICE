@@ -103,8 +103,8 @@ vector <int> ProductExceptSelf(vector<int>&array){
 
   int prefix =1;
   for(int i = 0;i <n;i++){
-       output[i]=prefix;
-       prefix *= array[i];
+       output[i]=prefix; // output[i]=(product of elements LEFT of i)×(product of elements RIGHT of i)
+       prefix *= array[i]; // output[i]=∏j≠i array[j]​​
   }
 
   int suffix =1;
