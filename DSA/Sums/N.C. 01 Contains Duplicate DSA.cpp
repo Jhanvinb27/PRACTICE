@@ -89,6 +89,26 @@ using namespace std;
 // Time Complexity : O(n)
 // Space Complexity : O(n)
 
+/* Input
+```
+nums = [7,9,6,5,9,8,7,6,0,1]
+```
+
+### Step-by-step Execution
+
+| Step | num | set before       | count(num) | action                  |
+|------|-----|------------------|------------|--------------------------|
+| 1    | 7   | {}               | 0          | insert → {7}             |
+| 2    | 9   | {7}              | 0          | insert → {7,9}           |
+| 3    | 6   | {7,9}            | 0          | insert → {7,9,6}         |
+| 4    | 5   | {7,9,6}          | 0          | insert → {7,9,6,5}       |
+| 5    | 9   | {7,9,6,5}        | 1 ❗        | return true (duplicate)  |
+
+### Observation
+- Duplicate found at step 5 (`9`)
+- Execution stops immediately after first duplicate
+*/
+
 /*
 Solution 4 :
   - we'll use a hash map
