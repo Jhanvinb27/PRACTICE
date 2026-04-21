@@ -39,10 +39,14 @@ Approach - Step 1: Initialize pointers
 class Solution{
 public:    
     ListNode* reverseList(ListNode* head){
-        ListNode* prev = NULL, *curr = head;
+        ListNode* prev = NULL;
+        ListNode* curr = head;
+        ListNode* next = NULL;
+      
         while (curr != NULL) {
-            ListNode *temp = curr->next;
+            next = curr->next;
             curr->next = prev;
+          
             prev = curr;
             curr = temp;
         }
